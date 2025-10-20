@@ -68,7 +68,7 @@ body, html {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   background-color: #fff;
   text-align: center;
-  scroll-margin-top: 120px; /* offsets the sticky header */
+  scroll-margin-top: 120px;
 }
 
 .section:nth-child(even) {
@@ -101,16 +101,68 @@ body, html {
   margin-top: 40px;
 }
 
-/* Responsive */
+/* --- HAMBURGER MENU STYLES --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* X icon animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- MOBILE RESPONSIVE MENU --- */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    text-align: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .header nav {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    background-color: #1a1a1a;
+  }
+
+  .header nav.active {
+    max-height: 300px; /* enough for the menu items */
+    transition: max-height 0.4s ease-in;
   }
 
   .header nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .header nav ul li a {
+    display: block;
+    padding: 10px;
   }
 
   .section {

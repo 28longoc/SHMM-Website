@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import logo from "./assets/Sage_Hill_Math_Meets.png"; // <-- Add your logo here
 
@@ -18,19 +18,35 @@ function App() {
 
 // Header / Navigation
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <header className="header">
       <div className="header-content">
         <img src={logo} alt="Logo" className="logo" />
         <h1>Sage Hill Math Meet</h1>
       </div>
-      <nav>
+
+      {/* Hamburger Menu Button */}
+      <div
+        className={`menu-toggle ${menuOpen ? "active" : ""}`}
+        onClick={toggleMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Navigation */}
+      <nav className={menuOpen ? "active" : ""}>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#past-competitions">Past Competitions</a></li>
-          <li><a href="#past-winners">Past Winners</a></li>
-          <li><a href="#upcoming-competitions">Upcoming Competitions</a></li>
-          <li><a href="#lectures">Lectures</a></li>
+          <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
+          <li><a href="#past-competitions" onClick={() => setMenuOpen(false)}>Past Competitions</a></li>
+          <li><a href="#past-winners" onClick={() => setMenuOpen(false)}>Past Winners</a></li>
+          <li><a href="#upcoming-competitions" onClick={() => setMenuOpen(false)}>Upcoming Competitions</a></li>
+          <li><a href="#lectures" onClick={() => setMenuOpen(false)}>Lectures</a></li>
         </ul>
       </nav>
     </header>
