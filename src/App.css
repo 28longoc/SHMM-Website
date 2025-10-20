@@ -1,0 +1,120 @@
+/* Reset and general styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Header Left Section (Logo + Title) */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Navigation */
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.header nav ul li a:hover {
+  color: #417922;
+}
+
+/* Sections */
+.section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  background-color: #fff;
+  text-align: center;
+  scroll-margin-top: 120px; /* offsets the sticky header */
+}
+
+.section:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section ul li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Footer */
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section {
+    padding: 30px 20px;
+    margin: 30px 20px;
+  }
+}
