@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import logo from "./assets/Sage_Hill_Math_Meets.png"; // <-- Add your logo here
+import logo from "./assets/Sage_Hill_Math_Meets.png"; // make sure this image exists
 
 function App() {
   return (
@@ -18,19 +18,33 @@ function App() {
 
 // Header / Navigation
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="header-content">
         <img src={logo} alt="Logo" className="logo" />
         <h1>Sage Hill Math Meet</h1>
+
+        {/* Hamburger Button */}
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <nav>
+
+      {/* Navigation Menu */}
+      <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#past-competitions">Past Competitions</a></li>
-          <li><a href="#past-winners">Past Winners</a></li>
-          <li><a href="#upcoming-competitions">Upcoming Competitions</a></li>
-          <li><a href="#lectures">Lectures</a></li>
+          <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
+          <li><a href="#past-competitions" onClick={() => setMenuOpen(false)}>Past Competitions</a></li>
+          <li><a href="#past-winners" onClick={() => setMenuOpen(false)}>Past Winners</a></li>
+          <li><a href="#upcoming-competitions" onClick={() => setMenuOpen(false)}>Upcoming Competitions</a></li>
+          <li><a href="#lectures" onClick={() => setMenuOpen(false)}>Lectures</a></li>
         </ul>
       </nav>
     </header>
