@@ -59,37 +59,55 @@ body, html {
   color: #417922;
 }
 
-/* Hamburger Menu */
+/* --- PERFECT HAMBURGER TO X --- */
 .hamburger {
   display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
   position: relative;
-  width: 25px;
-  height: 20px;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
-  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
   height: 3px;
-  width: 100%;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: transform 0.32s cubic-bezier(.2,.8,.2,1), opacity 0.2s;
+  transform-origin: center center;
+  margin: 0 auto;
 }
 
-/* Hamburger transition for X */
+/* bar positions */
+.hamburger span:nth-child(1) {
+  top: 4px;
+}
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger span:nth-child(3) {
+  bottom: 4px;
+}
+
+/* active X shape */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
 }
-
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: translateY(-50%) scaleX(0.8);
+}
+.hamburger.active span:nth-child(3) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
-}
+/* --- END OF HAMBURGER STYLING --- */
 
 /* Sections */
 .section {
@@ -133,10 +151,10 @@ body, html {
   margin-top: 40px;
 }
 
-/* Responsive */
+/* Responsive: mobile view */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex;
+    display: block;
   }
 
   .nav-menu {
@@ -156,5 +174,16 @@ body, html {
     flex-direction: column;
     gap: 15px;
     margin: 15px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 25px;
+  }
+
+  .header-content {
+    width: 100%;
+    justify-content: space-between;
   }
 }
