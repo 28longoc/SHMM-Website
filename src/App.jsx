@@ -7,9 +7,10 @@ function App() {
     <div>
       <Header />
       <Home />
+      <UpcomingSHMMCompetitions />
+      <UpcomingCompetitions />
       <PastCompetitions />
       <PastWinners />
-      <UpcomingCompetitions />
       <Lectures />
       <Footer />
     </div>
@@ -41,9 +42,10 @@ function Header() {
       <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
         <ul>
           <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
+          <li><a href="#upcoming-shmm-competitions" onClick={() => setMenuOpen(false)}>Upcoming SHMM Competitions</a></li>
+          <li><a href="#upcoming-competitions" onClick={() => setMenuOpen(false)}>Upcoming Competitions</a></li>
           <li><a href="#past-competitions" onClick={() => setMenuOpen(false)}>Past Competitions</a></li>
           <li><a href="#past-winners" onClick={() => setMenuOpen(false)}>Past Winners</a></li>
-          <li><a href="#upcoming-competitions" onClick={() => setMenuOpen(false)}>Upcoming Competitions</a></li>
           <li><a href="#lectures" onClick={() => setMenuOpen(false)}>Lectures</a></li>
         </ul>
       </nav>
@@ -66,9 +68,34 @@ function PastCompetitions() {
     <section id="past-competitions" className="section">
       <h2>Past Competitions</h2>
       <ul>
-        <li>2024 Regional Math Challenge</li>
-        <li>2023 State Math Championship</li>
-        <li>2022 National Math Meet</li>
+        <li>
+          <a
+            href="https://docs.google.com/presentation/d/1cIEtXIV1p_w4oScTnXRfPBocH9INIdZn-_yfxEDJUwU/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2025 Countdown 1
+          </a>
+        </li>
+        <li>2025 Exam 2 (N/A)</li>
+        <li>
+          <a
+            href="https://docs.google.com/document/d/1jCCoS0NZyRMXEyOR1s3wLz6fdhZR9UuZFxTpRkfQxsY/edit?tab=t.0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2025 Exam 1
+          </a>
+        </li>
+        <li>
+          <iframe
+            src="public\SHMM_P1_Solutions (1).pdf"  
+            width="100%"
+            height="600px"
+            style={{ border: "1px solid #ccc" }}
+            title="Past Competition PDF"
+          ></iframe>
+        </li>
       </ul>
     </section>
   );
@@ -79,9 +106,20 @@ function PastWinners() {
     <section id="past-winners" className="section">
       <h2>Past Winners</h2>
       <ul>
-        <li>2024 - Team Alpha</li>
-        <li>2023 - Team Beta</li>
-        <li>2022 - Team Gamma</li>
+        <li>2025 Countdown 1: Melissa and Raymond</li>
+        <li>2025 Exam 2: N/A</li>
+        <li>2025 Exam 1: Kammen</li>
+      </ul>
+    </section>
+  );
+}
+
+function UpcomingSHMMCompetitions() {
+  return (
+    <section id="upcoming-shmm-competitions" className="section">
+      <h2>Upcoming SHMM Competitions</h2>
+      <ul>
+        <li>2025 Mock AMC 10</li>
       </ul>
     </section>
   );
@@ -92,9 +130,7 @@ function UpcomingCompetitions() {
     <section id="upcoming-competitions" className="section">
       <h2>Upcoming Competitions</h2>
       <ul>
-        <li>2025 Regional Math Challenge - March</li>
-        <li>2025 State Math Championship - May</li>
-        <li>2025 National Math Meet - August</li>
+        <li>2025 AMC 10/12</li>
       </ul>
     </section>
   );
@@ -105,9 +141,7 @@ function Lectures() {
     <section id="lectures" className="section">
       <h2>Lectures</h2>
       <ul>
-        <li>Introduction to Math Meet - Jan 15, 2025</li>
-        <li>Advanced Programming - Feb 20, 2025</li>
-        <li>Mechanical Design - Mar 10, 2025</li>
+        <li>Coming Soon</li>
       </ul>
     </section>
   );
