@@ -26,8 +26,6 @@ function Header() {
       <div className="header-content">
         <img src={logo} alt="Logo" className="logo" />
         <h1>Sage Hill Math Meet</h1>
-
-        {/* Hamburger Button */}
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -68,42 +66,10 @@ function PastCompetitions() {
     <section id="past-competitions" className="section">
       <h2>Past Competitions</h2>
       <ul>
-        <li>
-          <a
-            href="https://docs.google.com/presentation/d/1cIEtXIV1p_w4oScTnXRfPBocH9INIdZn-_yfxEDJUwU/edit?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            2025 Countdown 1
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://docs.google.com/document/d/1gVsyDNXCSVa-LDxrpul1AT8XMuxVKniej1XakAyih5w/edit?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            2025 Exam 2
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://docs.google.com/document/d/1jCCoS0NZyRMXEyOR1s3wLz6fdhZR9UuZFxTpRkfQxsY/edit?tab=t.0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            2025 Exam 1
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://drive.google.com/file/d/1AoG3MNeU7H5LxCy9m6sdku0U31zMvkeE/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            2025 Exam 1 Solutions
-          </a>
-        </li>
+        <li><a href="https://docs.google.com/presentation/d/1cIEtXIV1p_w4oScTnXRfPBocH9INIdZn-_yfxEDJUwU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">2025 Countdown 1</a></li>
+        <li><a href="https://docs.google.com/document/d/1gVsyDNXCSVa-LDxrpul1AT8XMuxVKniej1XakAyih5w/edit?usp=sharing" target="_blank" rel="noopener noreferrer">2025 Exam 2</a></li>
+        <li><a href="https://docs.google.com/document/d/1jCCoS0NZyRMXEyOR1s3wLz6fdhZR9UuZFxTpRkfQxsY/edit?tab=t.0" target="_blank" rel="noopener noreferrer">2025 Exam 1</a></li>
+        <li><a href="https://drive.google.com/file/d/1AoG3MNeU7H5LxCy9m6sdku0U31zMvkeE/view?usp=sharing" target="_blank" rel="noopener noreferrer">2025 Exam 1 Solutions</a></li>
       </ul>
     </section>
   );
