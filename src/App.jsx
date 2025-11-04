@@ -58,7 +58,7 @@ function Home() {
   return (
     <section id="home" className="section">
       <h2>Welcome to Sage Hill Math Meet</h2>
-      <p>We are a dedicated team passionate about math. Explore competitions, winners, and lectures!</p>
+      <p>We are a student-led math club at Sage Hill School that prepares students for competitions and hosts student/guest-led seminars. We aim to help students develop critical thinking, collaboration, and an enthusiasm for math!</p>
     </section>
   );
 }
@@ -77,7 +77,15 @@ function PastCompetitions() {
             2025 Countdown 1
           </a>
         </li>
-        <li>2025 Exam 2 (N/A)</li>
+        <li>
+          <a
+            href="https://docs.google.com/document/d/1gVsyDNXCSVa-LDxrpul1AT8XMuxVKniej1XakAyih5w/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2025 Exam 2
+          </a>
+        </li>
         <li>
           <a
             href="https://docs.google.com/document/d/1jCCoS0NZyRMXEyOR1s3wLz6fdhZR9UuZFxTpRkfQxsY/edit?tab=t.0"
@@ -88,13 +96,13 @@ function PastCompetitions() {
           </a>
         </li>
         <li>
-          <iframe
-            src="public\SHMM_P1_Solutions (1).pdf"  
-            width="100%"
-            height="600px"
-            style={{ border: "1px solid #ccc" }}
-            title="Past Competition PDF"
-          ></iframe>
+          <a
+            href="https://drive.google.com/file/d/1AoG3MNeU7H5LxCy9m6sdku0U31zMvkeE/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2025 Exam 1 Solutions
+          </a>
         </li>
       </ul>
     </section>

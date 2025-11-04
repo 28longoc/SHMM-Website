@@ -40,6 +40,10 @@ body, html {
 }
 
 /* Navigation */
+.nav-menu {
+  display: flex; /* always visible on desktop */
+}
+
 .nav-menu ul {
   list-style: none;
   display: flex;
@@ -59,9 +63,9 @@ body, html {
   color: #417922;
 }
 
-/* --- HAMBURGER ALWAYS VISIBLE + FIXED X SHAPE --- */
+/* --- HAMBURGER STYLING --- */
 .hamburger {
-  display: block;
+  display: none; /* hidden on desktop */
   position: relative;
   width: 30px;
   height: 22px;
@@ -80,28 +84,14 @@ body, html {
 }
 
 /* bar positions */
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-.hamburger span:nth-child(2) {
-  top: 9px;
-}
-.hamburger span:nth-child(3) {
-  top: 18px;
-}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 9px; }
+.hamburger span:nth-child(3) { top: 18px; }
 
 /* Active X shape */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* --- END OF HAMBURGER STYLING --- */
+.hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 /* Sections */
 .section {
@@ -145,19 +135,23 @@ body, html {
   margin-top: 40px;
 }
 
-/* Responsive */
+/* Responsive for mobile */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block; /* show hamburger on mobile */
+  }
+
   .nav-menu {
-    display: none;
+    display: none; /* hide menu by default on mobile */
     width: 100%;
+    flex-direction: column;
     text-align: center;
     background-color: #1a1a1a;
-    flex-direction: column;
     transition: all 0.3s ease-in-out;
   }
 
   .nav-menu.open {
-    display: flex;
+    display: flex; /* show when hamburger clicked */
   }
 
   .nav-menu ul {
@@ -170,7 +164,7 @@ body, html {
     flex-direction: column;
     align-items: flex-start;
     padding: 15px 25px;
-  }
+  } 
 
   .header-content {
     width: 100%;
