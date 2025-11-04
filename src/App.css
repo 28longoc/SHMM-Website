@@ -59,9 +59,9 @@ body, html {
   color: #417922;
 }
 
-/* --- PERFECT HAMBURGER TO X --- */
+/* --- HAMBURGER ALWAYS VISIBLE + FIXED X SHAPE --- */
 .hamburger {
-  display: none;
+  display: block;
   position: relative;
   width: 30px;
   height: 22px;
@@ -72,39 +72,33 @@ body, html {
 .hamburger span {
   position: absolute;
   left: 0;
-  right: 0;
+  width: 100%;
   height: 3px;
   border-radius: 3px;
   background-color: #fff;
-  transition: transform 0.32s cubic-bezier(.2,.8,.2,1), opacity 0.2s;
-  transform-origin: center center;
-  margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
 /* bar positions */
 .hamburger span:nth-child(1) {
-  top: 4px;
+  top: 0;
 }
 .hamburger span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
+  top: 9px;
 }
 .hamburger span:nth-child(3) {
-  bottom: 4px;
+  top: 18px;
 }
 
-/* active X shape */
+/* Active X shape */
 .hamburger.active span:nth-child(1) {
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
-  transform: translateY(-50%) scaleX(0.8);
 }
 .hamburger.active span:nth-child(3) {
-  top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 /* --- END OF HAMBURGER STYLING --- */
@@ -151,12 +145,8 @@ body, html {
   margin-top: 40px;
 }
 
-/* Responsive: mobile view */
+/* Responsive */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
   .nav-menu {
     display: none;
     width: 100%;
