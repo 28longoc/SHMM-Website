@@ -16,12 +16,19 @@ body, html {
   top: 0;
   z-index: 100;
   display: flex;
-  flex-direction: column; /* stack title and nav */
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start; /* LEFT aligned */
 }
 
 /* Header Content */
 .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-section {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -36,14 +43,15 @@ body, html {
 .header h1 {
   margin: 0;
   font-size: 1.8rem;
-  text-align: center;
-  margin-bottom: 10px; /* spacing below title for nav */
+  text-align: left; /* align text left */
 }
 
 /* Navigation */
 .nav-menu {
-  display: flex; /* always visible on desktop */
-  gap: 25px;
+  display: flex;
+  justify-content: flex-start; /* LEFT aligned */
+  width: 100%;
+  margin-top: 10px;
 }
 
 .nav-menu ul {
@@ -67,7 +75,7 @@ body, html {
 
 /* Hamburger menu (mobile only) */
 .hamburger {
-  display: none; /* hidden on desktop */
+  display: none;
   position: relative;
   width: 30px;
   height: 22px;
@@ -85,12 +93,10 @@ body, html {
   transition: all 0.3s ease;
 }
 
-/* bar positions */
 .hamburger span:nth-child(1) { top: 0; }
 .hamburger span:nth-child(2) { top: 9px; }
 .hamburger span:nth-child(3) { top: 18px; }
 
-/* Active X shape */
 .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
@@ -140,21 +146,22 @@ body, html {
 /* Responsive: mobile view */
 @media (max-width: 768px) {
   .hamburger {
-    display: block; /* show hamburger */
+    display: block;
     margin-left: auto;
   }
 
   .nav-menu {
-    display: none; /* hide menu by default */
+    display: none;
     width: 100%;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     background-color: #1a1a1a;
     transition: all 0.3s ease-in-out;
+    margin-top: 10px;
   }
 
   .nav-menu.open {
-    display: flex; /* show menu when clicked */
+    display: flex;
   }
 
   .nav-menu ul {
@@ -169,6 +176,5 @@ body, html {
 
   .header-content {
     width: 100%;
-    justify-content: space-between;
   }
 }

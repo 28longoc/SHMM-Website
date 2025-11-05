@@ -24,8 +24,11 @@ function Header() {
   return (
     <header className="header">
       <div className="header-content">
-        <img src={logo} alt="Logo" className="logo" />
-        <h1>Sage Hill Math Meet</h1>
+        <div className="left-section">
+          <img src={logo} alt="Logo" className="logo" />
+          <h1>Sage Hill Math Meet</h1>
+        </div>
+
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
